@@ -1,11 +1,10 @@
 # SDSDiceView
 
-## dice view
+## SwiftUI Dice view
 can be triggered by using combine publisher
 
-
 ## example
-'''
+```
 //
 //  ContentView.swift
 //
@@ -45,4 +44,4 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
-'''
+```
