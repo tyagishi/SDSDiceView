@@ -20,7 +20,7 @@ public struct SDSDiceView: View {
     
     public var body: some View {
         VStack {
-            Image("\(dice)")
+            Image("\(dice)", bundle: .module)
                 .resizable()
                 .scaledToFit()
                 .rotation3DEffect(
