@@ -28,16 +28,27 @@ public struct SDSDiceView: View {
             Image("\(dice)", bundle: .module)
                 .resizable()
                 .scaledToFit()
-                .transition(RotatingFadeTransition())
+                .rotation3DEffect(Angle.degrees(animate ? 360 * 20 : 0),
+                                  axis: (x: 1, y: 1, z: 1))
+                //.transition(RotatingFadeTransition())
         }
-        .animation(.default, value: dice)
+        //.animation(.default, value: dice)
         .phaseAnimator(DicePhase.allCases, content: { view, _ in
             view
         })
         .onReceive(publisher) { () in
-            self.roll()
+            withAnimation(Animation.default.repeatForever()) {
+                animate.toggle()
+            }
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                withAnimation {
+                    self.dice = Int.random(in: 1...6)
+                    animate.toggle()
+                }
+            }
         }
     }
+
     public func roll() {
         self.dice = Int.random(in: 1...6)
         return
