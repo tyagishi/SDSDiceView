@@ -7,7 +7,7 @@ let package = Package(
     name: "SDSDiceView",
     platforms: [
         .iOS(.v17),
-        // .macOS() // not tested yet
+        .macOS(.v14)
     ],
     products: [
         // Products define the executables and libraries a package produces, and make them visible to other packages.
@@ -27,8 +27,8 @@ let package = Package(
             name: "SDSDiceView",
             dependencies: [],
             plugins: [
-                            .plugin(name: "SwiftLintBuildToolPlugin", package: "SwiftLintPlugins")
-                        ]
+                .plugin(name: "SwiftLintBuildToolPlugin", package: "SwiftLintPlugins")
+            ]
         ),
         .testTarget(
             name: "SDSDiceViewTests",
