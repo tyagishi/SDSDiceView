@@ -23,7 +23,6 @@ public struct SDSDiceView: View {
             Image("\(dice)", bundle: .module)
                 .resizable()
                 .scaledToFit()
-                .animation(.linear, value: angle)
                 .rotation3DEffect(angle,
                                   axis: (x: 1, y: 1, z: 1))
         }
