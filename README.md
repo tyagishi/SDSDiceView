@@ -1,5 +1,7 @@
 # SDSDiceView
 
+Roll the dice!
+
 ## SwiftUI Dice view
 can be triggered by using combine publisher
 
